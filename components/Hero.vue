@@ -1,3 +1,42 @@
+<template>
+  <section class="relative min-h-screen flex items-center justify-center w-screen">
+    <div class="relative text-center px-6 flex flex-col items-center">
+      <h1 ref="titleEl" class="text-[30rem] md:text-[80rem] font-extrabold tracking-tight leading-none select-none drop-shadow-[0_3px_8px_rgba(0,0,0,0.6)]">
+        <!-- FOOSH word -->
+        <span ref="hoverWordEl" class="inline-flex flex-col items-center gap-2">FOOSH</span>
+      </h1>
+
+      <p ref="subtitleEl" class="mt-6 text-lg md:text-xl text-green-500 max-w-2xl mx-auto">
+        PRODUCT | APPS | INTERIOR | EXTERIOR
+      </p>
+
+      <div class="mt-10 flex items-center justify-center gap-4 mb-20">
+        <a href="#about" class="rounded-xl border border-white/15 px-5 py-3 text-sm hover:bg-white/5 transition">Learn More</a>
+        <a href="#contact" class="rounded-xl bg-brand px-5 py-3 text-sm hover:bg-brand-dark transition">Contact</a>
+      </div>
+
+      <!-- Scroll Arrows -->
+      <div class="fixed top-1/2 right-4 -translate-y-1/2 z-50 flex flex-col items-center gap-4">
+        <!-- Up Arrow -->
+        <button v-show="!atTop" @click="scrollUp" class="transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+               class="w-12 h-12 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+
+        <!-- Down Arrow -->
+        <button v-show="!atBottom" @click="scrollDown" class="transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+               class="w-12 h-12 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</template>
+
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 
@@ -52,7 +91,8 @@ onMounted(() => {
 
   const word = hoverWordEl.value
   if (!word) return
-  const text = word.textContent ?? ''
+
+  const text = word.textContent && word.textContent.trim().length > 0 ? word.textContent : 'FOOSH'
 
   // očisti i ponovo napravi spanove
   word.textContent = ''
@@ -130,3 +170,9 @@ onBeforeUnmount(() => {
   spans = []
 })
 </script>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+</style>
