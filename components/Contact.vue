@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="bg-teal-700 mx-auto max-w-5xl px-6 py-24 min-h-screen flex flex-col justify-center">
+  <section id="contact" class="bg-teal-700 mx-auto w-screen px-6 md:px-[40rem] py-24 min-h-screen flex flex-col justify-center">
     <h2 class="text-3xl md:text-4xl font-bold">Contact</h2>
     <form class="mt-6 grid gap-4 md:grid-cols-2" @submit.prevent="onSubmit">
       <input v-model="form.name" type="text" placeholder="Your name"
