@@ -1,0 +1,1 @@
+export { default } from "file:///home/vili/Documents/web_projekti/proba/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
