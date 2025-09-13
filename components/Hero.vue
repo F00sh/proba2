@@ -53,9 +53,10 @@ onMounted(() => {
   const word = hoverWordEl.value
   if (!word) return
   const text = word.textContent ?? ''
-  word.textContent = ''
 
-  const frag = document.createDocumentFragment()
+  // očisti i ponovo napravi spanove
+  word.textContent = ''
+  spans = []
 
   const makeTween = (span: HTMLElement) =>
     $gsap!.to(span, {
@@ -63,26 +64,11 @@ onMounted(() => {
       y: () => $gsap!.utils.random(-20, 20),
       rotation: () => $gsap!.utils.random(-15, 15),
       scale: () => $gsap!.utils.random(0.85, 1.3),
-      duration: () => $gsap!.utils.random(0.4, 0.8),
+      duration: () => $gsap!.utils.random(0.6, 1.2),
       ease: 'power2.inOut',
       repeat: -1,
       repeatRefresh: true
     })
-
-  const onEnter = (span: HTMLElement) => {
-    if (activeTweens.has(span)) return
-    const tween = makeTween(span)
-    activeTweens.set(span, tween)
-  }
-
-  const onLeave = (span: HTMLElement) => {
-    const t = activeTweens.get(span)
-    if (t) {
-      t.kill()
-      activeTweens.delete(span)
-    }
-    $gsap?.to(span, { x: 0, y: 0, rotation: 0, scale: 1, duration: 0.6, ease: 'power2.inOut' })
-  }
 
   for (const ch of text.split('')) {
     const span = document.createElement('span')
@@ -92,25 +78,44 @@ onMounted(() => {
     span.style.display = 'inline-block'
     span.style.transformOrigin = '50% 50%'
 
-    frag.appendChild(span)
     spans.push(span)
+    word.appendChild(span)
 
     if (window.innerWidth <= 768) {
-      // Mobile: autoplay loop
+      // Mobile autoplay
       const tween = makeTween(span)
       activeTweens.set(span, tween)
     } else {
-      // Desktop: hover only
-      const enterHandler = () => onEnter(span)
-      const leaveHandler = () => onLeave(span)
+      // Desktop hover
+      const enterHandler = () => {
+        if (!activeTweens.has(span)) {
+          const tween = makeTween(span)
+          activeTweens.set(span, tween)
+        }
+      }
+      const leaveHandler = () => {
+        const t = activeTweens.get(span)
+        if (t) {
+          t.kill()
+          activeTweens.delete(span)
+        }
+        $gsap?.to(span, {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          scale: 1,
+          duration: 0.6,
+          ease: 'power2.inOut'
+        })
+      }
+
       span.addEventListener('pointerenter', enterHandler)
       span.addEventListener('pointerleave', leaveHandler)
+
       ;(span as any)._enterHandler = enterHandler
       ;(span as any)._leaveHandler = leaveHandler
     }
   }
-
-  word.appendChild(frag)
 })
 
 onBeforeUnmount(() => {
