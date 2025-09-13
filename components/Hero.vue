@@ -1,6 +1,6 @@
 <template>
   <section class="relative min-h-screen flex items-center justify-center w-screen">
-    <div class="relative text-center px-6 flex flex-col items-center">
+    <div class="relative text-center px-6 flex flex-col items-center pt-20">
       <h1 ref="titleEl" class="text-[30rem] md:text-[80rem] font-extrabold tracking-tight leading-none select-none drop-shadow-[0_3px_8px_rgba(0,0,0,0.6)]">
         <!-- FOOSH word -->
         <span ref="hoverWordEl" class="inline-flex flex-col items-center gap-2">FOOSH</span>
