@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="bg-gray-950 px-6 md:px-[40rem] py-20 min-h-screen flex flex-col justify-center w-full">
-    <h2 class="text-3xl md:text-[10rem] font-extrabold uppercase tracking-widest text-center my-[12rem]">About</h2>
+    <h2 class="text-8xl md:text-[10rem] font-extrabold uppercase tracking-widest text-center my-[7rem] md:my-[12rem]">About</h2>
 
     <p class="mt-4 text-gray-300 leading-relaxed">
       I'm Marko, a multidisciplinary designer and 3D artist with a strong background in product design, 3D visualization, and digital experiences. Over the years I’ve worked on diverse projects ranging from industrial and interior design to web interfaces, animation, and branding.

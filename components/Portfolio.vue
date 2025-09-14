@@ -1,6 +1,6 @@
 <template>
   <section id="portfolio" class="relative min-h-screen flex flex-col justify-center items-center px-6 py-20">
-    <h2 class="text-3xl md:text-[10rem] font-extrabold uppercase tracking-widest my-[12rem]">Portfolio</h2>
+    <h2 class="text-6xl md:text-[10rem] font-extrabold uppercase tracking-widest my-[12rem]">Portfolio</h2>
 
     <!-- Carousel -->
     <div class="relative w-full max-w-5xl overflow-hidden mb-28">

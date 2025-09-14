@@ -6,7 +6,7 @@
         <span ref="hoverWordEl" class="inline-flex flex-col items-center gap-2">FOOSH</span>
       </h1>
      
-      <p ref="subtitleEl" class="mt-6 md:mt-12 text-lg md:text-4xl uppercase text-green-500 max-w-2xl mx-auto font-black tracking-widest">
+      <p ref="subtitleEl" class="mt-10 md:mt-12 text-2xl md:text-4xl uppercase text-green-500 max-w-2xl mx-auto font-black tracking-widest">
         FOOSH is a multidisciplinary design studio crafting innovative solutions in
       </p>
       <p ref="subtitleEl" class="mt-6 md:mb-12 text-lg md:text-3xl text-green-500 max-w-2xl mx-auto tracking-widest">
