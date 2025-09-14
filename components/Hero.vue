@@ -5,12 +5,15 @@
         <!-- FOOSH word -->
         <span ref="hoverWordEl" class="inline-flex flex-col items-center gap-2">FOOSH</span>
       </h1>
-
-      <p ref="subtitleEl" class="mt-6 text-lg md:text-xl text-green-500 max-w-2xl mx-auto">
+     
+      <p ref="subtitleEl" class="mt-6 md:mt-12 text-lg md:text-4xl uppercase text-green-500 max-w-2xl mx-auto font-black tracking-widest">
+        FOOSH is a multidisciplinary design studio crafting innovative solutions in
+      </p>
+      <p ref="subtitleEl" class="mt-6 md:mb-12 text-lg md:text-3xl text-green-500 max-w-2xl mx-auto tracking-widest">
         PRODUCT | APPS | INTERIOR | EXTERIOR
       </p>
 
-      <div class="mt-10 flex items-center justify-center gap-4 mb-20">
+      <div class="mt-10 flex items-center justify-center gap-4 mb-[12rem]">
         <a href="#about" class="rounded-xl border border-white/15 px-5 py-3 text-sm hover:bg-white/5 transition">Learn More</a>
         <a href="#contact" class="rounded-xl bg-brand px-5 py-3 text-sm hover:bg-brand-dark transition">Contact</a>
       </div>

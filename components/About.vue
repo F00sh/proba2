@@ -1,6 +1,6 @@
 <template>
-  <section id="about" class="bg-gray-950 px-6 md:px-[30rem] py-20 min-h-screen flex flex-col justify-center w-screen">
-    <h2 class="text-3xl md:text-4xl font-bold">About Me</h2>
+  <section id="about" class="bg-gray-950 px-6 md:px-[40rem] py-20 min-h-screen flex flex-col justify-center w-screen">
+    <h2 class="text-3xl md:text-[10rem] font-extrabold uppercase tracking-widest text-center my-[12rem]">About</h2>
 
     <p class="mt-4 text-gray-300 leading-relaxed">
       I'm Marko, a multidisciplinary designer and 3D artist with a strong background in product design, 3D visualization, and digital experiences. Over the years I’ve worked on diverse projects ranging from industrial and interior design to web interfaces, animation, and branding.
@@ -15,7 +15,7 @@
     </p>
 
     <!-- Portfolio Grid -->
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 mb-28">
       <div v-for="(item, idx) in portfolio" :key="idx"
            class="rounded-2xl overflow-hidden border border-white/10 bg-gray-900 cursor-pointer hover:scale-[1.02] transition"
            @click="openLightbox(item)">

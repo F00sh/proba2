@@ -1,9 +1,9 @@
 <template>
   <section id="portfolio" class="relative min-h-screen flex flex-col justify-center items-center px-6 py-20">
-    <h2 class="text-3xl md:text-4xl font-bold mb-8">Portfolio</h2>
+    <h2 class="text-3xl md:text-[10rem] font-extrabold uppercase tracking-widest my-[12rem]">Portfolio</h2>
 
     <!-- Carousel -->
-    <div class="relative w-full max-w-5xl overflow-hidden">
+    <div class="relative w-full max-w-5xl overflow-hidden mb-28">
       <div class="flex transition-transform duration-500" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
         <div v-for="(project, index) in projects" :key="index" class="min-w-full flex-shrink-0 px-4">
           <div class="rounded-2xl overflow-hidden border border-white/10 bg-gray-900 cursor-pointer"
