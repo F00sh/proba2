@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="bg-gray-950 px-6 md:px-[40rem] py-20 min-h-screen flex flex-col justify-center w-screen">
+  <section id="about" class="bg-gray-950 px-6 md:px-[40rem] py-20 min-h-screen flex flex-col justify-center w-full">
     <h2 class="text-3xl md:text-[10rem] font-extrabold uppercase tracking-widest text-center my-[12rem]">About</h2>
 
     <p class="mt-4 text-gray-300 leading-relaxed">
